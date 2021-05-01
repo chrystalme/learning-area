@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Prevent default example</title>
     <style>
       div {
@@ -13,30 +13,33 @@
     <form>
       <div>
         <label for="fname">First name: </label>
-        <input id="fname" type="text">
+        <input id="fname" type="text" />
       </div>
       <div>
         <label for="lname">Last name: </label>
-        <input id="lname" type="text">
+        <input id="lname" type="text" />
       </div>
       <div>
-        <input id="submit" type="submit">
+        <input id="submit" type="submit" />
       </div>
     </form>
     <p></p>
     <script>
-      const form = document.querySelector('form');
-      const fname = document.getElementById('fname');
-      const lname = document.getElementById('lname');
-      const para = document.querySelector('p');
+      const form = document.querySelector("form");
+      const fname = document.getElementById("fname");
+      const lname = document.getElementById("lname");
+      const para = document.getElementsByTagName("p");
 
-      form.onsubmit = function(e) {
-        if(fname.value === '' || lname.value === '') {
+      form.onsubmit = (e) => {
+        if (fname.value === "" || lname.value === "") {
           e.preventDefault();
-          para.textContent = 'You need to fill in both names!'
+          para.textContent = "You need to fill in both names!";
         }
-      }
-
+      };
+      fname.onclick = (e) => {
+        e.fname.value = "Chrys";
+        // fname.value = "Chrys";
+      };
     </script>
   </body>
 </html>
